@@ -1,0 +1,12 @@
+PODS:
+  - HyphenateFullSDK (3.1.5)
+
+DEPENDENCIES:
+  - HyphenateFullSDK (~> 3.1.3)
+
+SPEC CHECKSUMS:
+  HyphenateFullSDK: 536f76eeb0914dba766b1d5d30dee083f0805da2
+
+PODFILE CHECKSUM: c309b775cd2ec310bc81bad5d242c942e77f1fe6
+
+COCOAPODS: 1.1.1
