@@ -7,10 +7,6 @@
 //
 
 #import "YYLogInVC.h"
-//#import "EMError.h"
-//#import "ChatDemoHelper.h"
-//#import "MBProgressHUD.h"
-//#import "RedPacketUserConfig.h"
 #import "YYRegisterVC.h"
 
 @interface YYLogInVC ()
@@ -30,6 +26,11 @@
 
 #pragma mark - 点击事件
 - (IBAction)LogInClick:(UIButton *)sender {
+    
+    
+    
+    UITabBarController *tabbarVC = [self.storyboard instantiateViewControllerWithIdentifier:@"tabbar"];
+    [self presentViewController:tabbarVC animated:YES completion:nil];
 }
 
 - (IBAction)addNewUser:(UIButton *)sender {

@@ -49,6 +49,9 @@
         if (!error) {
             NSLog(@"登录成功");
             //跳转聊天界面
+            UIStoryboard *main = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            UITabBarController *tabbarVC = [main instantiateViewControllerWithIdentifier:@"tabbar"];
+            [self presentViewController:tabbarVC animated:YES completion:nil];
         }
     }
 }

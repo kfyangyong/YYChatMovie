@@ -154,6 +154,8 @@
 		DD8B0B1F1E00F52B0041B034 /* IQToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = DD8B0B0E1E00F52B0041B034 /* IQToolbar.m */; };
 		DD8B0B201E00F52B0041B034 /* IQUIView+IQKeyboardToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = DD8B0B101E00F52B0041B034 /* IQUIView+IQKeyboardToolbar.m */; };
 		DD8B0B211E00F52B0041B034 /* IQKeyboardManager.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DD8B0B131E00F52B0041B034 /* IQKeyboardManager.bundle */; };
+		DD8B0B251E023FE90041B034 /* YYFriendsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DD8B0B241E023FE90041B034 /* YYFriendsVC.m */; };
+		DD8B0B281E0240110041B034 /* YYMovieVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DD8B0B271E0240110041B034 /* YYMovieVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -348,6 +350,10 @@
 		DD8B0B101E00F52B0041B034 /* IQUIView+IQKeyboardToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "IQUIView+IQKeyboardToolbar.m"; sourceTree = "<group>"; };
 		DD8B0B111E00F52B0041B034 /* KeyboardManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyboardManager.h; sourceTree = "<group>"; };
 		DD8B0B131E00F52B0041B034 /* IQKeyboardManager.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = IQKeyboardManager.bundle; sourceTree = "<group>"; };
+		DD8B0B231E023FE90041B034 /* YYFriendsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYFriendsVC.h; sourceTree = "<group>"; };
+		DD8B0B241E023FE90041B034 /* YYFriendsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYFriendsVC.m; sourceTree = "<group>"; };
+		DD8B0B261E0240110041B034 /* YYMovieVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYMovieVC.h; sourceTree = "<group>"; };
+		DD8B0B271E0240110041B034 /* YYMovieVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYMovieVC.m; sourceTree = "<group>"; };
 		FE06F24053FE29EF04E0425C /* Pods-YYChatMovie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YYChatMovie.release.xcconfig"; path = "Pods/Target Support Files/Pods-YYChatMovie/Pods-YYChatMovie.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -490,6 +496,10 @@
 			children = (
 				DD55BFFD1DFE8A9F00B40C46 /* YYChatVC.h */,
 				DD55BFFE1DFE8A9F00B40C46 /* YYChatVC.m */,
+				DD8B0B231E023FE90041B034 /* YYFriendsVC.h */,
+				DD8B0B241E023FE90041B034 /* YYFriendsVC.m */,
+				DD8B0B261E0240110041B034 /* YYMovieVC.h */,
+				DD8B0B271E0240110041B034 /* YYMovieVC.m */,
 				DD55C0001DFE8AF000B40C46 /* YYLogInVC.h */,
 				DD55C0011DFE8AF000B40C46 /* YYLogInVC.m */,
 				DD55C1331DFEA59E00B40C46 /* YYRegisterVC.h */,
@@ -1106,6 +1116,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD8B0B141E00F52B0041B034 /* IQNSArray+Sort.m in Sources */,
+				DD8B0B251E023FE90041B034 /* YYFriendsVC.m in Sources */,
 				DD8B0B1A1E00F52B0041B034 /* IQKeyboardReturnKeyHandler.m in Sources */,
 				DD55C1361DFEA59E00B40C46 /* YYRegisterVC.m in Sources */,
 				DD55BF931DFE871A00B40C46 /* AppDelegate.m in Sources */,
@@ -1117,6 +1128,7 @@
 				DD8B0B1B1E00F52B0041B034 /* IQSegmentedNextPrevious.m in Sources */,
 				DD55C0021DFE8AF000B40C46 /* YYLogInVC.m in Sources */,
 				DD8B0B181E00F52B0041B034 /* IQUIWindow+Hierarchy.m in Sources */,
+				DD8B0B281E0240110041B034 /* YYMovieVC.m in Sources */,
 				DD8B0B1D1E00F52B0041B034 /* IQBarButtonItem.m in Sources */,
 				DD8B0B1F1E00F52B0041B034 /* IQToolbar.m in Sources */,
 				DD8B0B171E00F52B0041B034 /* IQUIViewController+Additions.m in Sources */,

@@ -51,7 +51,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="inh-Cf-VFk">
-                    <rect key="frame" x="80" y="488" width="215" height="36"/>
+                    <rect key="frame" x="80" y="410" width="215" height="36"/>
                     <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <state key="normal" title="完成">
@@ -171,7 +171,7 @@
             <constraints>
                 <constraint firstItem="wDM-LD-Y5a" firstAttribute="leading" secondItem="89W-Xf-cL4" secondAttribute="trailing" constant="8" id="2D3-qp-ki1"/>
                 <constraint firstItem="gQL-km-6e1" firstAttribute="top" secondItem="1us-Bz-9Jm" secondAttribute="bottom" constant="20" id="3Gz-dV-mwp"/>
-                <constraint firstItem="inh-Cf-VFk" firstAttribute="top" secondItem="UG2-cS-MOi" secondAttribute="bottom" constant="98" id="5CP-av-7mo"/>
+                <constraint firstItem="inh-Cf-VFk" firstAttribute="top" secondItem="UG2-cS-MOi" secondAttribute="bottom" constant="20" id="5CP-av-7mo"/>
                 <constraint firstItem="89W-Xf-cL4" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="100" id="5Qf-kw-eg7"/>
                 <constraint firstAttribute="trailing" secondItem="1us-Bz-9Jm" secondAttribute="trailing" constant="50" id="7eU-o9-KVa"/>
                 <constraint firstItem="dKm-ge-Yqs" firstAttribute="centerY" secondItem="kwX-NI-ljw" secondAttribute="centerY" id="AaH-8Y-onV"/>
