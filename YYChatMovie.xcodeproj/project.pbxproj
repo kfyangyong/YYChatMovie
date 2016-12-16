@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		23AF66D614FCABA63AC44093 /* libPods-YYChatMovie.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA2D20E9B2A9348B89F22BC1 /* libPods-YYChatMovie.a */; };
+		DD3C0E461E03CC1000680980 /* YYUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = DD3C0E451E03CC1000680980 /* YYUserInfo.m */; };
 		DD55BF901DFE871A00B40C46 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DD55BF8F1DFE871A00B40C46 /* main.m */; };
 		DD55BF931DFE871A00B40C46 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DD55BF921DFE871A00B40C46 /* AppDelegate.m */; };
 		DD55BF991DFE871A00B40C46 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD55BF971DFE871A00B40C46 /* Main.storyboard */; };
@@ -178,6 +179,8 @@
 /* Begin PBXFileReference section */
 		0B011D7C199AF43545F06582 /* Pods-YYChatMovie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YYChatMovie.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YYChatMovie/Pods-YYChatMovie.debug.xcconfig"; sourceTree = "<group>"; };
 		CA2D20E9B2A9348B89F22BC1 /* libPods-YYChatMovie.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YYChatMovie.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD3C0E441E03CC1000680980 /* YYUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYUserInfo.h; sourceTree = "<group>"; };
+		DD3C0E451E03CC1000680980 /* YYUserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYUserInfo.m; sourceTree = "<group>"; };
 		DD55BF8B1DFE871A00B40C46 /* YYChatMovie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YYChatMovie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD55BF8F1DFE871A00B40C46 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DD55BF911DFE871A00B40C46 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -401,6 +404,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		DD3C0E431E03CBA900680980 /* userinfo */ = {
+			isa = PBXGroup;
+			children = (
+				DD3C0E441E03CC1000680980 /* YYUserInfo.h */,
+				DD3C0E451E03CC1000680980 /* YYUserInfo.m */,
+			);
+			name = userinfo;
+			sourceTree = "<group>";
+		};
 		DD55BF821DFE871A00B40C46 = {
 			isa = PBXGroup;
 			children = (
@@ -427,6 +439,7 @@
 		DD55BF8D1DFE871A00B40C46 /* YYChatMovie */ = {
 			isa = PBXGroup;
 			children = (
+				DD3C0E431E03CBA900680980 /* userinfo */,
 				DD55BFFC1DFE8A6D00B40C46 /* VC */,
 				DD55BFFB1DFE8A5C00B40C46 /* main */,
 				DD55BF971DFE871A00B40C46 /* Main.storyboard */,
@@ -1134,6 +1147,7 @@
 				DD8B0B171E00F52B0041B034 /* IQUIViewController+Additions.m in Sources */,
 				DD8B0B1E1E00F52B0041B034 /* IQTitleBarButtonItem.m in Sources */,
 				DD55BF901DFE871A00B40C46 /* main.m in Sources */,
+				DD3C0E461E03CC1000680980 /* YYUserInfo.m in Sources */,
 				DD8B0B1C1E00F52B0041B034 /* IQTextView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
