@@ -24,6 +24,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+   NSString * nameAndPwd = [YYKeyChain yyKeyChainLoad];
+    if (![nameAndPwd isEqualToString:@""]) {
+        NSLog(@"账号信息 %@",nameAndPwd);
+        NSArray *arr = [nameAndPwd componentsSeparatedByString:@","];
+        self.accountTF.text = arr[0];
+        self.pwdTF.text = arr[1];
+    }
 }
 - (BOOL)allEditEnd{
     if ([self.accountTF.text isEqualToString:@""]) {
@@ -35,13 +43,6 @@
     return YES;
 }
 
-- (void)saveNameAndPwd{
-    NSString *userName = self.accountTF.text;
-    NSString *passWord = self.pwdTF.text;
-    NSString *namePwd = [NSString stringWithFormat:@"%@,%@",userName,passWord];
-    [YYKeyChain yyKeyChainSave:namePwd];
-}
-
 #pragma mark - 点击事件
 - (IBAction)LogInClick:(UIButton *)sender {
     
@@ -51,7 +52,6 @@
     //登录
     [EMClient sharedClient].options.isAutoLogin = self.isAuto;
    
-
     EMError *error;
     //登录方式1
     error = [[EMClient sharedClient] loginWithUsername:self.accountTF.text password:self.pwdTF.text];
@@ -71,11 +71,21 @@
 //        UITabBarController *tabbarVC = [self.storyboard instantiateViewControllerWithIdentifier:@"tabbar"];
 //        [self presentViewController:tabbarVC animated:YES completion:nil];
 //    }];
-//
     
+    NSString *userName = self.accountTF.text;
+    NSString *passWord = self.pwdTF.text;
+    NSString *namePwd = [NSString stringWithFormat:@"%@,%@",userName,passWord];
     //记住密码
     if (self.isRememberPwd) {
-        [self saveNameAndPwd];
+        [YYKeyChain yyKeyChainSave:namePwd];
+    }else{
+        [YYKeyChain yyKeyChainDelegate:namePwd];
+    }
+    if (self.isAuto) {
+        NSString *path = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).firstObject;
+        NSString *filePath = [path stringByAppendingString:@"/info.plist"];
+        NSArray *arr = @[@"自动登录"];
+        [arr writeToFile:filePath atomically:YES];
     }
 }
 
@@ -105,7 +115,6 @@
         [sender setImage:[UIImage imageNamed:@"unselecticon"] forState:UIControlStateNormal];
     }
 }
-
 
 
 - (void)didReceiveMemoryWarning {

@@ -10,6 +10,7 @@
 #import "KeyboardManager.h"
 #import "YYLogInVC.h"
 #import "EMSDK.h"
+#import "YYKeyChain.h"
 @interface AppDelegate ()<EMClientDelegate>
 
 @end
@@ -22,10 +23,22 @@ static NSString *Kappkey = @"1152161212178844#yychatmovie";
     // Override point for customization after application launch.
    
     
+    
     UIWindow *window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     window.backgroundColor = [UIColor whiteColor];
     self.window = window;
-    [self setRootViewController];
+    NSString *path = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).firstObject;
+    NSString *filePath = [path stringByAppendingString:@"/info.plist"];
+    NSArray *arr = [NSArray arrayWithContentsOfFile:filePath];
+    NSString *str = arr.firstObject;
+    NSLog(@"是否自动登录%@",str);
+    if ([str isEqualToString:@"自动登录"]) {
+        [self setRootViewController:YES];
+        [self autoLogIn];
+    }else{
+        [self setRootViewController:NO];
+    }
+    
     [self.window makeKeyAndVisible];
     
     //弹出键盘
@@ -44,14 +57,28 @@ static NSString *Kappkey = @"1152161212178844#yychatmovie";
     return YES;
 }
 
-- (void)setRootViewController{
+- (void)autoLogIn{
+    //登录方式2 回调
+    NSString * nameAndPwd = [YYKeyChain yyKeyChainLoad];
+    if (![nameAndPwd isEqualToString:@""]) {
+        NSLog(@"账号信息 %@",nameAndPwd);
+        NSArray *arr = [nameAndPwd componentsSeparatedByString:@","];
+        NSString *name = arr[0];
+        NSString *pwd = arr[1];
+        [[EMClient sharedClient] loginWithUsername:name password:pwd completion:^(NSString *aUsername, EMError *aError) {
+            if (aError) {
+                NSLog(@"登录失败");
+                [self setRootViewController:NO];
+            }
+        }];
+    }
+}
+
+- (void)setRootViewController:(BOOL)isauto{
     
     UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    BOOL isAutoLogin = [EMClient sharedClient].options.isAutoLogin;
-    [[EMClient sharedClient] addDelegate:self delegateQueue:nil];
-    if (isAutoLogin) {
-        //登录
-        
+    
+    if (isauto) {
         //切换根视图
         UITabBarController *tabbar = [mainStoryboard instantiateViewControllerWithIdentifier:@"tabbar"];
         [self.window setRootViewController:tabbar];

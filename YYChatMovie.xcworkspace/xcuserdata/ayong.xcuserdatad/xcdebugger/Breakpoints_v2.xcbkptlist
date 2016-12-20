@@ -19,13 +19,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "YYChatMovie/YYLogInVC.m"
-            timestampString = "503561056.743175"
+            filePath = "YYChatMovie/YYKeyChain.m"
+            timestampString = "503935387.892247"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
-            landmarkName = "-saveNameAndPwd"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "+save:data:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -35,13 +35,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "YYChatMovie/YYLogInVC.m"
-            timestampString = "503560980.755259"
+            filePath = "YYChatMovie/AppDelegate.m"
+            timestampString = "503938911.495266"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
-            landmarkName = "-allEditEnd"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "-application:didFinishLaunchingWithOptions:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
