@@ -9,6 +9,8 @@
 #import "YYLogInVC.h"
 #import "YYRegisterVC.h"
 #import "EMSDK.h"
+#import "YYKeyChain.h"
+
 @interface YYLogInVC ()
 @property (weak, nonatomic) IBOutlet UITextField *accountTF;
 @property (weak, nonatomic) IBOutlet UITextField *pwdTF;
@@ -33,6 +35,13 @@
     return YES;
 }
 
+- (void)saveNameAndPwd{
+    NSString *userName = self.accountTF.text;
+    NSString *passWord = self.pwdTF.text;
+    NSString *namePwd = [NSString stringWithFormat:@"%@,%@",userName,passWord];
+    [YYKeyChain yyKeyChainSave:namePwd];
+}
+
 #pragma mark - 点击事件
 - (IBAction)LogInClick:(UIButton *)sender {
     
@@ -41,8 +50,7 @@
     }
     //登录
     [EMClient sharedClient].options.isAutoLogin = self.isAuto;
-    //记住密码
-    
+   
 
     EMError *error;
     //登录方式1
@@ -63,8 +71,12 @@
 //        UITabBarController *tabbarVC = [self.storyboard instantiateViewControllerWithIdentifier:@"tabbar"];
 //        [self presentViewController:tabbarVC animated:YES completion:nil];
 //    }];
-//    
+//
     
+    //记住密码
+    if (self.isRememberPwd) {
+        [self saveNameAndPwd];
+    }
 }
 
 - (IBAction)addNewUser:(UIButton *)sender {
@@ -77,7 +89,6 @@
 }
 
 - (IBAction)autoLogin:(UIButton *)sender {
-    
     self.isAuto = self.isAuto == YES ? NO:YES;
     if (self.isAuto) {
         [sender setImage:[UIImage imageNamed:@"selecticon"] forState:UIControlStateNormal];
@@ -93,7 +104,6 @@
     }else{
         [sender setImage:[UIImage imageNamed:@"unselecticon"] forState:UIControlStateNormal];
     }
-
 }
 
 

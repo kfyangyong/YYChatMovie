@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		23AF66D614FCABA63AC44093 /* libPods-YYChatMovie.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA2D20E9B2A9348B89F22BC1 /* libPods-YYChatMovie.a */; };
+		DD06B1A11E0927E800B60919 /* YYKeyChain.m in Sources */ = {isa = PBXBuildFile; fileRef = DD06B1A01E0927E800B60919 /* YYKeyChain.m */; };
+		DD06B1A31E09287200B60919 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD06B1A21E09287200B60919 /* Security.framework */; };
 		DD3C0E461E03CC1000680980 /* YYUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = DD3C0E451E03CC1000680980 /* YYUserInfo.m */; };
 		DD55BF901DFE871A00B40C46 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DD55BF8F1DFE871A00B40C46 /* main.m */; };
 		DD55BF931DFE871A00B40C46 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DD55BF921DFE871A00B40C46 /* AppDelegate.m */; };
@@ -179,6 +181,9 @@
 /* Begin PBXFileReference section */
 		0B011D7C199AF43545F06582 /* Pods-YYChatMovie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YYChatMovie.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YYChatMovie/Pods-YYChatMovie.debug.xcconfig"; sourceTree = "<group>"; };
 		CA2D20E9B2A9348B89F22BC1 /* libPods-YYChatMovie.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YYChatMovie.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD06B19F1E0927E800B60919 /* YYKeyChain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYKeyChain.h; sourceTree = "<group>"; };
+		DD06B1A01E0927E800B60919 /* YYKeyChain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYKeyChain.m; sourceTree = "<group>"; };
+		DD06B1A21E09287200B60919 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		DD3C0E441E03CC1000680980 /* YYUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYUserInfo.h; sourceTree = "<group>"; };
 		DD3C0E451E03CC1000680980 /* YYUserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYUserInfo.m; sourceTree = "<group>"; };
 		DD55BF8B1DFE871A00B40C46 /* YYChatMovie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YYChatMovie.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -365,6 +370,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD06B1A31E09287200B60919 /* Security.framework in Frameworks */,
 				DD55BFD31DFE889600B40C46 /* libsqlite3.0.tbd in Frameworks */,
 				DD55BFD11DFE888B00B40C46 /* libstdc++.6.0.9.tbd in Frameworks */,
 				DD55BFCF1DFE887F00B40C46 /* libc.tbd in Frameworks */,
@@ -409,6 +415,8 @@
 			children = (
 				DD3C0E441E03CC1000680980 /* YYUserInfo.h */,
 				DD3C0E451E03CC1000680980 /* YYUserInfo.m */,
+				DD06B19F1E0927E800B60919 /* YYKeyChain.h */,
+				DD06B1A01E0927E800B60919 /* YYKeyChain.m */,
 			);
 			name = userinfo;
 			sourceTree = "<group>";
@@ -481,6 +489,7 @@
 		DD55BFC11DFE883C00B40C46 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DD06B1A21E09287200B60919 /* Security.framework */,
 				DD55BFD21DFE889600B40C46 /* libsqlite3.0.tbd */,
 				DD55BFD01DFE888B00B40C46 /* libstdc++.6.0.9.tbd */,
 				DD55BFCE1DFE887F00B40C46 /* libc.tbd */,
@@ -1129,6 +1138,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD8B0B141E00F52B0041B034 /* IQNSArray+Sort.m in Sources */,
+				DD06B1A11E0927E800B60919 /* YYKeyChain.m in Sources */,
 				DD8B0B251E023FE90041B034 /* YYFriendsVC.m in Sources */,
 				DD8B0B1A1E00F52B0041B034 /* IQKeyboardReturnKeyHandler.m in Sources */,
 				DD55C1361DFEA59E00B40C46 /* YYRegisterVC.m in Sources */,
