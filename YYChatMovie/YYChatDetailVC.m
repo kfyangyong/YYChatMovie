@@ -1,42 +1,49 @@
 //
-//  YYChatVC.m
+//  YYChatDetailVC.m
 //  YYChatMovie
 //
-//  Created by ayong on 2016/12/12.
+//  Created by ayong on 2016/12/25.
 //  Copyright © 2016年 ayong. All rights reserved.
 //
 
-#import "YYChatVC.h"
-#import "YYChatCell.h"
 #import "YYChatDetailVC.h"
-@interface YYChatVC ()<UITableViewDelegate,UITableViewDataSource>
+
+@interface YYChatDetailVC ()<UITableViewDataSource,UITableViewDelegate>
+@property (weak, nonatomic) IBOutlet UITextView *editTextview;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomConstraint;
 
 
-@property (nonatomic,strong) NSMutableArray *datasourceMuArr;
 @end
 
-@implementation YYChatVC
+@implementation YYChatDetailVC
 
- static NSString *identifier = @"YYChatCell";
+- (IBAction)yuyinClick:(UIButton *)sender {
+    
+}
+
+- (IBAction)biaoqingClick:(UIButton *)sender {
+    
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-   
-    self.datasourceMuArr = [NSMutableArray array];
-    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([YYChatCell class]) bundle:nil] forCellReuseIdentifier:identifier];
+    self.tableView.delegate = self;
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
     
 }
 
+
 #pragma mark -UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-//    return self.datasourceMuArr.count;
-    return 24;
+    //    return self.datasourceMuArr.count;
+    return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    YYChatCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     
     return cell;
 }
@@ -44,11 +51,10 @@
 #pragma mark - UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    YYChatDetailVC *vc = [[YYChatDetailVC alloc] init];
-
-    [self.navigationController pushViewController:vc animated:YES];
-    self.hidesBottomBarWhenPushed = YES;
+    
 }
+
+
 
 
 - (void)didReceiveMemoryWarning {
