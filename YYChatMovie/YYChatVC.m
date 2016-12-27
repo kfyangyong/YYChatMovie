@@ -45,8 +45,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     YYChatDetailVC *vc = [[YYChatDetailVC alloc] init];
-
-    [self.navigationController pushViewController:vc animated:YES];
+    [self presentViewController:vc animated:YES completion:nil];
     self.hidesBottomBarWhenPushed = YES;
 }
 

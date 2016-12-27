@@ -33,7 +33,7 @@ static NSString *Kappkey = @"1152161212178844#yychatmovie";
     NSString *str = arr.firstObject;
     NSLog(@"是否自动登录%@",str);
     if ([str isEqualToString:@"自动登录"]) {
-        [self setRootViewController:YES];
+       
         [self autoLogIn];
     }else{
         [self setRootViewController:NO];
@@ -60,17 +60,23 @@ static NSString *Kappkey = @"1152161212178844#yychatmovie";
 - (void)autoLogIn{
     //登录方式2 回调
     NSString * nameAndPwd = [YYKeyChain yyKeyChainLoad];
-    if (![nameAndPwd isEqualToString:@""]) {
+    if (nameAndPwd) {
         NSLog(@"账号信息 %@",nameAndPwd);
         NSArray *arr = [nameAndPwd componentsSeparatedByString:@","];
         NSString *name = arr[0];
         NSString *pwd = arr[1];
-        [[EMClient sharedClient] loginWithUsername:name password:pwd completion:^(NSString *aUsername, EMError *aError) {
-            if (aError) {
-                NSLog(@"登录失败");
-                [self setRootViewController:NO];
-            }
-        }];
+        EMError *error;
+        //登录方式1
+        error = [[EMClient sharedClient] loginWithUsername:name password:pwd];
+//        if (error) {
+//            NSLog(@"登录失败%@",error);
+//            [self setRootViewController:NO];;
+//        }else{
+            [self setRootViewController:YES];
+//        }
+       
+    }else{
+        [self setRootViewController:NO];
     }
 }
 
