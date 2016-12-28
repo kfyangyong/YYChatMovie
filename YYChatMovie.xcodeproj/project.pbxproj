@@ -10,7 +10,6 @@
 		23AF66D614FCABA63AC44093 /* libPods-YYChatMovie.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA2D20E9B2A9348B89F22BC1 /* libPods-YYChatMovie.a */; };
 		DD06B1A11E0927E800B60919 /* YYKeyChain.m in Sources */ = {isa = PBXBuildFile; fileRef = DD06B1A01E0927E800B60919 /* YYKeyChain.m */; };
 		DD06B1A31E09287200B60919 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD06B1A21E09287200B60919 /* Security.framework */; };
-		DD3C0E461E03CC1000680980 /* YYUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = DD3C0E451E03CC1000680980 /* YYUserInfo.m */; };
 		DD55BF901DFE871A00B40C46 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DD55BF8F1DFE871A00B40C46 /* main.m */; };
 		DD55BF931DFE871A00B40C46 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DD55BF921DFE871A00B40C46 /* AppDelegate.m */; };
 		DD55BF991DFE871A00B40C46 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD55BF971DFE871A00B40C46 /* Main.storyboard */; };
@@ -188,8 +187,7 @@
 		DD06B19F1E0927E800B60919 /* YYKeyChain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYKeyChain.h; sourceTree = "<group>"; };
 		DD06B1A01E0927E800B60919 /* YYKeyChain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYKeyChain.m; sourceTree = "<group>"; };
 		DD06B1A21E09287200B60919 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		DD3C0E441E03CC1000680980 /* YYUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYUserInfo.h; sourceTree = "<group>"; };
-		DD3C0E451E03CC1000680980 /* YYUserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYUserInfo.m; sourceTree = "<group>"; };
+		DD335E921E134BCE0063886D /* YYChatMovie.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = YYChatMovie.entitlements; sourceTree = "<group>"; };
 		DD55BF8B1DFE871A00B40C46 /* YYChatMovie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YYChatMovie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD55BF8F1DFE871A00B40C46 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DD55BF911DFE871A00B40C46 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -423,8 +421,6 @@
 		DD3C0E431E03CBA900680980 /* userinfo */ = {
 			isa = PBXGroup;
 			children = (
-				DD3C0E441E03CC1000680980 /* YYUserInfo.h */,
-				DD3C0E451E03CC1000680980 /* YYUserInfo.m */,
 				DD06B19F1E0927E800B60919 /* YYKeyChain.h */,
 				DD06B1A01E0927E800B60919 /* YYKeyChain.m */,
 			);
@@ -457,6 +453,7 @@
 		DD55BF8D1DFE871A00B40C46 /* YYChatMovie */ = {
 			isa = PBXGroup;
 			children = (
+				DD335E921E134BCE0063886D /* YYChatMovie.entitlements */,
 				DD3C0E431E03CBA900680980 /* userinfo */,
 				DD55BFFC1DFE8A6D00B40C46 /* VC */,
 				DD55BFFB1DFE8A5C00B40C46 /* main */,
@@ -933,7 +930,13 @@
 				TargetAttributes = {
 					DD55BF8A1DFE871A00B40C46 = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = EK369VYB66;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 					DD55BFA31DFE871B00B40C46 = {
 						CreatedOnToolsVersion = 8.1;
@@ -1185,7 +1188,6 @@
 				DD8B0B171E00F52B0041B034 /* IQUIViewController+Additions.m in Sources */,
 				DD8B0B1E1E00F52B0041B034 /* IQTitleBarButtonItem.m in Sources */,
 				DD55BF901DFE871A00B40C46 /* main.m in Sources */,
-				DD3C0E461E03CC1000680980 /* YYUserInfo.m in Sources */,
 				DD8B0B1C1E00F52B0041B034 /* IQTextView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1336,6 +1338,8 @@
 			baseConfigurationReference = 0B011D7C199AF43545F06582 /* Pods-YYChatMovie.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = YYChatMovie/YYChatMovie.entitlements;
+				DEVELOPMENT_TEAM = EK369VYB66;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = YYChatMovie/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1353,6 +1357,8 @@
 			baseConfigurationReference = FE06F24053FE29EF04E0425C /* Pods-YYChatMovie.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = YYChatMovie/YYChatMovie.entitlements;
+				DEVELOPMENT_TEAM = EK369VYB66;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = YYChatMovie/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

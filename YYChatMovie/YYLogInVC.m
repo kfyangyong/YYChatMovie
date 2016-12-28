@@ -14,6 +14,8 @@
 @interface YYLogInVC ()
 @property (weak, nonatomic) IBOutlet UITextField *accountTF;
 @property (weak, nonatomic) IBOutlet UITextField *pwdTF;
+@property (weak, nonatomic) IBOutlet UIButton *rememberPwdBtn;
+@property (weak, nonatomic) IBOutlet UIButton *autoBtn;
 
 @property (assign,nonatomic) BOOL isAuto;
 @property (assign,nonatomic) BOOL isRememberPwd;
@@ -26,11 +28,21 @@
     [super viewDidLoad];
     
    NSString * nameAndPwd = [YYKeyChain yyKeyChainLoad];
-    if (![nameAndPwd isEqualToString:@""]) {
+    if (nameAndPwd) {
         NSLog(@"账号信息 %@",nameAndPwd);
         NSArray *arr = [nameAndPwd componentsSeparatedByString:@","];
         self.accountTF.text = arr[0];
         self.pwdTF.text = arr[1];
+        self.isRememberPwd = YES;
+        [self.rememberPwdBtn setImage:[UIImage imageNamed:@"selecticon"] forState:UIControlStateNormal];
+    }
+   
+    NSString *path = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).firstObject;
+    NSString *filePath = [path stringByAppendingString:@"/info.plist"];
+    NSArray *arr = [NSArray arrayWithContentsOfFile:filePath];
+    if ([arr.firstObject isEqualToString:@"自动登录"]) {
+        [self.autoBtn setImage:[UIImage imageNamed:@"selecticon"] forState:UIControlStateNormal];
+        self.isAuto = YES;
     }
 }
 - (BOOL)allEditEnd{
@@ -82,9 +94,18 @@
         [YYKeyChain yyKeyChainDelegate:namePwd];
     }
     if (self.isAuto) {
+        if (!self.isRememberPwd) {
+            [YYKeyChain yyKeyChainSave:namePwd];
+        }
+        NSString *str = [YYKeyChain yyKeyChainLoad];
         NSString *path = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).firstObject;
         NSString *filePath = [path stringByAppendingString:@"/info.plist"];
         NSArray *arr = @[@"自动登录"];
+        [arr writeToFile:filePath atomically:YES];
+    }else{
+        NSString *path = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).firstObject;
+        NSString *filePath = [path stringByAppendingString:@"/info.plist"];
+        NSArray *arr = @[@"否"];
         [arr writeToFile:filePath atomically:YES];
     }
 }

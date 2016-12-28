@@ -66,14 +66,14 @@ static NSString *Kappkey = @"1152161212178844#yychatmovie";
         NSString *name = arr[0];
         NSString *pwd = arr[1];
         EMError *error;
-        //登录方式1
+        //登录方式1 这里会出现登录失败导致不能自动登录
         error = [[EMClient sharedClient] loginWithUsername:name password:pwd];
-//        if (error) {
-//            NSLog(@"登录失败%@",error);
-//            [self setRootViewController:NO];;
-//        }else{
+        if (error) {
+            NSLog(@"登录失败%@",error);
+            [self setRootViewController:NO];;
+        }else{
             [self setRootViewController:YES];
-//        }
+        }
        
     }else{
         [self setRootViewController:NO];
