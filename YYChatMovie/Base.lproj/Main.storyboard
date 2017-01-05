@@ -161,10 +161,10 @@
             </objects>
             <point key="canvasLocation" x="24.800000000000001" y="36.431784107946029"/>
         </scene>
-        <!--ChatVC-->
+        <!--消息-->
         <scene sceneID="yNl-fF-Fae">
             <objects>
-                <viewController storyboardIdentifier="YYChatVC" id="L2c-Hq-z7f" customClass="YYChatVC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="YYChatVC" id="L2c-Hq-z7f" customClass="YYChateListVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="f3h-xp-aco"/>
                         <viewControllerLayoutGuide type="bottom" id="WTz-t0-9gh"/>
@@ -172,28 +172,9 @@
                     <view key="view" contentMode="scaleToFill" id="PBg-U3-9RT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ivu-9F-EBV">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="L2c-Hq-z7f" id="pVg-QS-yoo"/>
-                                    <outlet property="delegate" destination="L2c-Hq-z7f" id="xql-As-BPt"/>
-                                </connections>
-                            </tableView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="WTz-t0-9gh" firstAttribute="top" secondItem="ivu-9F-EBV" secondAttribute="bottom" id="8xx-Nk-FoQ"/>
-                            <constraint firstItem="ivu-9F-EBV" firstAttribute="top" secondItem="PBg-U3-9RT" secondAttribute="top" id="DBc-lr-a0q"/>
-                            <constraint firstAttribute="trailing" secondItem="ivu-9F-EBV" secondAttribute="trailing" id="gXb-D0-ct3"/>
-                            <constraint firstItem="ivu-9F-EBV" firstAttribute="leading" secondItem="PBg-U3-9RT" secondAttribute="leading" id="qtO-zm-ZBx"/>
-                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="cSC-qS-1b5"/>
-                    <connections>
-                        <outlet property="tableView" destination="ivu-9F-EBV" id="ces-Xo-fRy"/>
-                    </connections>
+                    <navigationItem key="navigationItem" title="消息" id="cSC-qS-1b5"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P0q-WO-Nw7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

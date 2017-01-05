@@ -41,6 +41,7 @@ static NSString *Kappkey = @"1152161212178844#yychatmovie";
     
     [self.window makeKeyAndVisible];
     
+    
     //弹出键盘
     IQKeyboardManager *manager = [IQKeyboardManager sharedManager];
     manager.enable = YES;
